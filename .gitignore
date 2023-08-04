@@ -161,3 +161,9 @@ cython_debug/
 
 # database
 database/*
+
+# raw html
+soup.html
+
+# personal
+NOTES.md

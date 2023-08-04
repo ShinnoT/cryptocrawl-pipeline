@@ -29,6 +29,10 @@ Before running the project, you need to install the required Python libraries. T
 pip install -r requirements.txt
 ```
 
+### NOTE:
+
+_`from collections import Iterable` has been deprecated but is still in use in the bonobo package -- to fix for local usage, modify the import statement in the file `bonobo\config\processors.py` to `from collections.abc import Iterable`_
+
 ---
 
 ## Usage
