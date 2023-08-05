@@ -9,6 +9,8 @@ locale.setlocale(locale.LC_ALL, "")
 
 
 def format_float(value):
+    if value == "N/A":
+        return None
     if value[-1] == "%":
         return locale.atof(value[1:-1])
     if value[0] == "-" or value[0] == "+":
@@ -19,11 +21,14 @@ def format_float(value):
 def format_text_float(value):
     tens = {"K": 10e3, "M": 10e6, "B": 10e9, "T": 10e12, "Q": 10e15}
 
+    if value == "N/A":
+        return None
+
     if not value[-1] in tens:
         return locale.atof(value)
 
     factor, exp = value[0:-1], value[-1].upper()
-    return float(factor) * tens[exp]
+    return locale.atof(factor) * tens[exp]
 
 
 def format_table(raw_soup: BeautifulSoup) -> pd.DataFrame:

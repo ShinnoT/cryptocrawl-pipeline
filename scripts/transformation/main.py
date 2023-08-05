@@ -1,6 +1,8 @@
-from bs4 import BeautifulSoup
-import pandas as pd
+import logging
 from typing import Tuple
+
+import pandas as pd
+from bs4 import BeautifulSoup
 
 from .helpers import format_html
 
@@ -14,6 +16,10 @@ def transform(soup: BeautifulSoup) -> Tuple[pd.DataFrame, pd.DataFrame]:
     Returns:
         tuple[DataFrame]: formatted crypto and crypto_data df.
     """
-    crypto_df, crypto_data_df = format_html(soup)
+    try:
+        crypto_df, crypto_data_df = format_html(soup)
 
-    return {"crypto_df": crypto_df, "crypto_data_df": crypto_data_df}
+        yield crypto_df, crypto_data_df
+    except Exception as err:
+        print("this is the printed error:: ", str(err))
+        # logging.exception(str(err))
