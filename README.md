@@ -1,6 +1,15 @@
 # Cryptocurrency Crawl Data Pipeline
 
-This project extracts cryptocurrency data from Yahoo Finance, processes the data, and stores the results in a SQLite database. It is a simple ETL pipeline implemented using Python and the Bonobo ETL framework.
+This project extracts cryptocurrency data from Yahoo Finance, processes the data, and stores the results in a SQLite database. It is a simple ETL pipeline implemented using Python and the [Bonobo ETL framework](https://www.bonobo-project.org/).
+
+<div align="center" style="margin-bottom:10px;margin-top:10px;">
+    <img src="https://img.shields.io/badge/Made%20with-Python-green" />
+    <img src="https://img.shields.io/badge/Powered%20by-bonobo-black" />
+    <img src="https://img.shields.io/badge/Parsed%20with-BeautifulSoup-orange" />
+    <img src="https://img.shields.io/badge/Database-SQLite-blue" />
+</div>
+
+![cryptocrawl-pipeline - portfolio site](https://github.com/ShinnoT/cryptocrawl-pipeline/assets/26269548/745b43f5-33de-4955-ac7a-4c0ce5e54568)
 
 ---
 
@@ -15,7 +24,7 @@ This project extracts cryptocurrency data from Yahoo Finance, processes the data
 
 ## About
 
-The script will scrape job listings data from the target website, process the data, and store the results in a SQLite database located at `database/crypto.db`.
+The script will scrape crypto data from the target website, process the data, and store the results in a SQLite database located at `database/crypto.db`.
 
 You can view the database using any SQLite database client.
 
@@ -40,7 +49,7 @@ _`from collections import Iterable` has been deprecated but is still in use in t
 To run the ETL pipeline, execute the main script from the project directory:
 
 ```bash
-python scripts/scripts/main.py
+python scripts/main.py
 ```
 
 ---
